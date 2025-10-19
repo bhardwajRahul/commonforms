@@ -28,9 +28,6 @@ commonforms = "commonforms:main"
 [tool.setuptools]
 packages = ["commonforms"]
 
-[tool.setuptools.package-data]
-commonforms = ["models/*.pt", "models/*.onnx"]
-
 [dependency-groups]
 dev = [
     "pytest>=8.4.2",
