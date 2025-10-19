@@ -166,6 +166,7 @@ def prepare_form(
     image_size: int = 1600,
     confidence: float = 0.3,
     fast: bool = False,
+    multiline: bool = False,
 ):
     detector = FFDNetDetector(model_or_path, device=device, fast=fast)
 
@@ -187,7 +188,7 @@ def prepare_form(
             name = f"{widget.widget_type.lower()}_{widget.page}_{i}"
 
             if widget.widget_type == "TextBox":
-                writer.add_text_box(name, page_ix, widget.bounding_box)
+                writer.add_text_box(name, page_ix, widget.bounding_box, multiline=multiline)
             elif widget.widget_type == "ChoiceButton":
                 writer.add_checkbox(name, page_ix, widget.bounding_box)
             elif widget.widget_type == "Signature":

@@ -47,6 +47,7 @@ commonforms <input.pdf> <output.pdf>
 | `--image-size` | int | `1600` | Image size for inference |
 | `--confidence` | float | `0.3` | Confidence threshold for detection |
 | `--fast` | flag | `False` | If running on a CPU, you can trade off accuracy for speed and run in about half the time |
+| `--multiline` | flag | `False` | If you want the detected textboxes to allow multiline inputs |
 
 
 ## CommonForms API
