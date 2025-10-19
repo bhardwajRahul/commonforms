@@ -50,6 +50,11 @@ def main():
         action="store_true",
         help="If running on a CPU, you can use --fast to get a 50% speedup with a small accuracy penalty",
     )
+    parser.add_argument(
+        "--multiline",
+        action="store_true",
+        help="If you want the detected textboxes to allow multiline inputs.",
+    )
 
     args = parser.parse_args()
 
@@ -63,6 +68,7 @@ def main():
         image_size=args.image_size,
         confidence=args.confidence,
         fast=args.fast,
+        multiline=args.multiline,
     )
 
 
