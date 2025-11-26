@@ -72,7 +72,7 @@ class FFDetrDetector:
     ) -> dict[int, list[Widget]]:
         image_size = 1024
         results = []
-        for b in batch([self.resize(p.image, image_size) for p in pages], n=batch_size):
+        for b in batch([p.image for p in pages], n=batch_size):
             predictions = self.model.predict(b, threshold=confidence)
             if len(pages) == 1 or batch_size == 1:
                 predictions = [predictions]
